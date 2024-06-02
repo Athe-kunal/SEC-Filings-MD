@@ -8,4 +8,4 @@ def run_marker(input_ticker_year_path:str,ticker:str,year:str,workers:int=4,max_
     output_ticker_year_path = os.path.join(SAVE_DIR,f"{ticker}-{year}")
     os.makedirs(SAVE_DIR,exist_ok=True)
     
-    subprocess.run(["marker", input_ticker_year_path,output_ticker_year_path,  "--workers", workers, "--num_chunks",num_chunks,"--max", max_workers ,"--metadata_file", path_to_metadata])
+    subprocess.run(["marker", input_ticker_year_path,output_ticker_year_path,  "--workers", str(workers), "--num_chunks",str(num_chunks),"--max", str(max_workers) ,"--metadata_file", path_to_metadata])

@@ -18,12 +18,12 @@ parser.add_argument("--workers", type=int, default=5, help="Number of worker pro
 args = parser.parse_args()
 
 assert args.include_amends in ["true", "false"], "The include_amends argument is either true or false"
-filings_types_list = args.filings_types.split(",")
+filings_types_list = args.filing_types.split(",")
 include_amends = True if args.include_amends == "true" else False
 
 
 html_urls, metadata_json, input_ticker_year_path = sec_save_pdfs(args.ticker,args.year,filings_types_list,include_amends)
-
+print("Saved files, Now converting to markdowns")
 run_marker(
     input_ticker_year_path=input_ticker_year_path,
     ticker=args.ticker,
