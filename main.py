@@ -32,3 +32,4 @@ run_marker(
     max_workers=args.max,
     num_chunks=args.num_chunks,
 )
+print("Done converting")
