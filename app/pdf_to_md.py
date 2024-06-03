@@ -9,3 +9,6 @@ def run_marker(input_ticker_year_path:str,ticker:str,year:str,workers:int=4,max_
     os.makedirs(SAVE_DIR,exist_ok=True)
     
     subprocess.run(["marker", input_ticker_year_path,output_ticker_year_path,  "--workers", str(workers), "--num_chunks",str(num_chunks),"--max", str(max_workers) ,"--metadata_file", path_to_metadata])
+    print("Done converting")
+    return 
+
