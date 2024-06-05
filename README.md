@@ -29,6 +29,15 @@ Install the packages
 ```bash
 pip install -r requirements.txt
 ```
+You also need to install the pdfkit requirements
+
+For linux platforms, you can directly install
+
+```bash
+sudo apt-get install wkhtmltopdf
+```
+
+Refer [here](https://pypi.org/project/pdfkit/) for installation instructions
 
 Run the `main.py` file to get the pdfs and convert it into markdowns
 
