@@ -9,7 +9,7 @@ docker build -t sec-filings-pdf-md .
 Run the docker image
 
 ```bash
-docker run --mount source=output,target=/output sec-filings-pdf-md --ticker AAPL --year 2024 --include_amends true --filing_types 10-Q -bm 2
+docker run --mount type=bind,source="$(pwd)"/output,target=/app/output sec-filings-pdf-md --ticker AAPL --year 2024 --include_amends true --filing_types 10-K,10-Q -bm 2
 ```
 
 Alternatively, you can run locally by first building a virtual environment
